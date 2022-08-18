@@ -1,0 +1,26 @@
+<h2 mat-dialog-title>Add Product</h2>
+<mat-dialog-content>
+    <form class="example-form">
+        <mat-form-field class="product-form-field" appearance="fill">
+            <mat-label>Title</mat-label>
+            <input name="title" [ngModel]="title" (ngModelChange)="titleChange($event)" matInput>
+        </mat-form-field>
+        <mat-form-field class="product-form-field" appearance="fill">
+            <mat-label>Category</mat-label>
+            <input name="category" [ngModel]="category" (ngModelChange)="categoryChange($event)" matInput>
+        </mat-form-field>
+        <mat-form-field class="product-form-field" appearance="fill">
+            <mat-label>Description</mat-label>
+            <input name="description" [ngModel]="description" (ngModelChange)="descriptionChange($event)" matInput>
+        </mat-form-field>
+        <mat-form-field class="product-form-field" appearance="fill">
+            <mat-label>Price</mat-label>
+            <input name="price" type="number" [ngModel]="price" (ngModelChange)="priceChange($event)" matInput>
+        </mat-form-field>
+    </form>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+    <button mat-button mat-raised-button color="primary" [disabled]="(!title || !description || !price || !category)"  (click)="onClickSubmit()" >Save</button>
+    <button mat-button mat-dialog-close>Cancel</button>
+</mat-dialog-actions>
